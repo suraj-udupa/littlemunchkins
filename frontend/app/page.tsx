@@ -2,13 +2,14 @@
 
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth, UserButton, SignInButton } from "@clerk/nextjs";
+// import { useAuth, UserButton, SignInButton } from "@clerk/nextjs";
 import { createSession, requestUploadUrl } from "@/lib/api";
 
 type InputMode = "text" | "photo" | "video" | "audio";
 
 export default function Home() {
-  const { isSignedIn } = useAuth();
+  // Clerk disabled — treat user as always signed in
+  const isSignedIn = true;
   const router = useRouter();
   const [mode, setMode] = useState<InputMode>("text");
   const [question, setQuestion] = useState("");
@@ -74,7 +75,7 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-orange-600">Little Munchkins</h1>
           <p className="text-sm text-gray-500">Understand your baby&apos;s behavior</p>
         </div>
-        {isSignedIn ? <UserButton /> : <SignInButton><button className="text-sm bg-orange-500 text-white px-3 py-1.5 rounded-lg">Sign in</button></SignInButton>}
+        {/* Clerk disabled: {isSignedIn ? <UserButton /> : <SignInButton><button>Sign in</button></SignInButton>} */}
       </header>
 
       <form onSubmit={handleSubmit} className="space-y-5">
