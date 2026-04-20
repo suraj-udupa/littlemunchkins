@@ -34,7 +34,7 @@ jobs:
       # Tell Railway to redeploy the web service using the new image
       - name: Redeploy web service on Railway
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
         run: |
           npm install -g @railway/cli
