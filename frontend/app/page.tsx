@@ -75,7 +75,6 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-orange-600">Little Munchkins</h1>
           <p className="text-sm text-gray-500">Understand your baby&apos;s behavior</p>
         </div>
-        {/* Clerk disabled: {isSignedIn ? <UserButton /> : <SignInButton><button>Sign in</button></SignInButton>} */}
       </header>
 
       <form onSubmit={handleSubmit} className="space-y-5">
